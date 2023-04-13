@@ -1,0 +1,57 @@
+Implemente a classe Paciente contendo os seguintes atributos:
+
+class Paciente{
+  
+      int peso;
+      float altura;
+      String classificação;
+      int calcularIMC();
+  
+}
+
+public class Paciente {
+  
+    private int peso;
+    private float altura;
+    private String classificacao;
+  
+    public Paciente(int peso, float altura) {
+        this.peso = peso;
+        this.altura = altura;
+        calcularIMC();
+    }
+  
+    public int getPeso() {
+        return peso;
+    }
+  
+    public void setPeso(int peso) {
+        this.peso = peso;
+        calcularIMC();
+    }
+  
+    public float getAltura() {
+        return altura;
+}
+  
+    public void setAltura(float altura) {
+        this.altura = altura;
+        calcularIMC();
+    }
+private void calcularIMC() {
+        float imc = peso / (altura * altura);
+        if (imc < 18.5) {
+            classificacao = "Abaixo do peso";
+        } else if (imc < 25) {
+            classificacao = "Peso normal";
+        } else if (imc < 30) {
+            classificacao = "Acima do peso";
+        } else {
+            classificacao = "Obesidade";
+        }
+    }
+  
+    public String getClassificacao() {
+        return classificacao;
+    }
+}
