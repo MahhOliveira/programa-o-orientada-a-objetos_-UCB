@@ -1,0 +1,72 @@
+01- Crie uma classe Ponto para representar pontos no plano cartesiano, que deverá conter como atributos dois valores numéricos, que representam as coordenadas no espaço bidimensional (R²). Implemente também os seguintes métodos:
+    
+public Ponto (float x, float y): método construtor da classe, responsável por inicializar as coordenadas de cada objeto declarado;
+
+public float getModulo(): método que devolve a distância do ponto até a origem (pode ser calculado utilizando fórmula que deriva do Teorema de Pitágoras;
+public String getQuadrante(): método que devolve o quadrante em que o ponto está localizado (estabeleça notação caso o ponto esteja localizado nos eixos coordenados ou na origem).
+
+java
+public class Ponto {
+    private float x;
+    private float y;
+
+    public Ponto(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    // Nesta classe, os atributos `x` e `y` representam as coordenadas do ponto no plano cartesiano. O método construtor recebe como parâmetros as coordenadas `x` e `y` e as utiliza para inicializar os atributos correspondentes do objeto criado.
+}
+
+public class Ponto {
+  private float x;
+  private float y;
+
+  public Ponto(float x, float y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  public float getX() {
+    return x;
+  }
+
+  public void setX(float x) {
+    this.x = x;
+  }
+
+  public float getY() {
+    return y;
+  }
+
+  public void setY(float y) {
+    this.y = y;
+  }
+public float getModulo() {
+    return (float) Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+  }
+}
+//...ponto está na origem
+    else if(x > 0 && y > 0)
+      return "1º Quadrante";
+    else if(x < 0 && y > 0)
+      return "2º Quadrante";
+    else if(x < 0 && y < 0)
+      return "3º Quadrante";
+    else if(x > 0 && y < 0)
+      return "4º Quadrante";
+    else if(x == 0)
+      return "Eixo das ordenadas"; //ponto está sobre o eixo das ordenadas
+    else
+      return "Eixo das abscissas"; //ponto está sobre o eixo das abscissas
+Para facilitar a leitura e manutenção do código, podemos usar uma estrutura de seleção switch/case ao invés de vários if/else encadeados:
+
+switch (true) {
+  case (x == 0 && y == 0): return "Origem";
+  case (x > 0 && y > 0): return "1º Quadrante";
+case (x < 0 && y > 0): return "2º Quadrante";
+  case (x < 0 && y < 0): return "3º Quadrante";
+  case (x > 0 && y < 0): return "4º Quadrante";
+  case (x == 0): return " o eixo Y"; 
+  case (y == 0): return "...o eixo X";
+  default: return "Ponto de interseção dos eixos";
