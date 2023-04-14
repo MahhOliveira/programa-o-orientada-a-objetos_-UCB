@@ -1,0 +1,51 @@
+Implemente a classe Eleitor contendo os seguintes atributos:
+
+class Eleitor{
+      int idade;
+      String classeEleitoral;
+      int getIdade();
+      String getClasse();
+}
+public class Eleitor {
+    private int idade;
+    private String classeEleitoral;
+
+    public Eleitor(int idade) {
+        this.idade = idade;
+        calcularClasseEleitoral();
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getClasseEleitoral() {
+        return classeEleitoral;
+    }
+private void calcularClasseEleitoral() {
+        if (idade < 16) {
+            classeEleitoral = "Não eleitor";
+        } else if (idade >= 16 && idade < 18 || idade > 70) {
+            classeEleitoral = "Eleitor facultativo";
+        } else {
+            classeEleitoral ="Eleitor obrigatório";
+        }
+    }
+}
+Eleitor eleitor1 = new Eleitor(25);
+System.out.println("Idade do eleitor: " + eleitor1.getIdade());
+System.out.println("Classe eleitoral: " + eleitor1.getClasseEleitoral());
+System.out.println(eleitor1.toString());
+Idade do eleitor: 25
+Classe eleitoral: Eleitor obrigatório
+Eleitor{idade=25, classeEleitoral='Eleitor obrigatório'}
+//
+Podemos também criar um eleitor com idade menor que 18 para testar a classe eleitoral "Eleitor facultativo":
+
+
+Eleitor eleitor2 = new Eleitor(16);
+System.out.println("Idade do eleitor: " + eleitor2.getIdade());
+System.out.println("Classe eleitoral: " + eleitor2.getClasseEleitoral());
+System.out.println(eleitor2.toString());
+Idade do eleitor: 16Classe eleitoral: Eleitor facultativo
+Eleitor{idade=16, classeEleitoral='Eleitor facultativo'}
