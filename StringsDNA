@@ -1,0 +1,97 @@
+//Escreva uma classe StringDNA que seja capaz de processar uma string de DNA. 
+// Essa classe deve encapsular uma instância da classe String e conter ao menos os seguintes métodos:
+
+class StringDNA {
+  constructor(str) {
+    this.validChars = ['A', 'C', 'G', 'T'];
+    this.dnaString = '';
+    for(let i = 0; i < str.length; i++) {
+      if(this.validChars.includes(str[i])) {
+        this.dnaString += str[i];
+      } else {
+        this.dnaString += 'A';
+      }
+    }
+  }
+  
+  paraString() {
+    return this.dnaString;
+  }
+  
+  caractereEm(index) {
+ return this.dnaString[index];
+  }
+  
+  quantosA() {
+    return this.dnaString.split('A').length-1;
+  }
+  
+  quantosC() {
+    return this.dnaString.split('C').length-1;
+  }
+  
+  quantosG() {
+    return this.dnaString.split('G').length-1;
+  }
+ quantosT() {
+    return this.dnaString.split('T').length-1;
+  }
+  
+  tamanho() {
+    return this.dnaString.length;
+  }
+  
+  reversoComplementar() {
+    let complement = '';
+    for(let i = 0; i < this.dnaString.length; i++) {
+      if(this.dnaString[i] == 'A') {
+        complement += 'T';
+      } else if(this.dnaString[i] == 'C') {
+        complement += 'G';
+      } else if(this.dnaString[i] == 'G') {
+        complement += 'C';
+      } else {
+        complement += 'A';
+  }
+    }
+    return new StringDNA(complement.split('').reverse().join(''));
+  }
+  
+  compara(otherString) {
+    let score = 0;
+    for(let i = 0; i < this.dnaString.length && i < otherString.tamanho(); i++) {
+      let a = this.dnaString[i];
+      let b = otherString.caractereEm(i);
+      if(a === b) {
+        score += 3;
+      } else if((a === 'A' && b === 'T') || (a === 'T' && b === 'A') || (a === 'C' && b === 'G') || (a === 'G' && b === 'C')) {
+        score += 1;
+      }
+    }
+    return score;
+  }
+}
+
+
+Exemplo de utilização da classe:
+
+javascript
+let strDna = new StringDNA('CATGATTAG'); // instanciando a classe para a string "CATGATTAG"
+console.log(strDna.paraString()); // retorna "CATGATTAG"
+console.log(strDna.caractereEm(3)); // retorna "G"
+console.log(strDna.quantosA()); // retorna 3
+console.log(strDna.quantosC()); // retorna 1
+console.log(strDna.quantosG()); // retorna 2
+console.log(strDna.quantosT()); // retorna 2
+console.log(strDna.tamanho()); // retorna 9
+console.log(strDna.reversoComplementar().paraString()); // retorna "CTAATCATG"
+let strDna2 = new StringDNA('CTAATCAGA');
+console.log(strDna.compara(strDna2)); // retorna 6
+
+  score += 1;
+      }
+    }
+    return score;
+  }
+}
+
