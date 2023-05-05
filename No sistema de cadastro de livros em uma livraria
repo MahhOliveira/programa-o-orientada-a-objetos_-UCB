@@ -1,0 +1,44 @@
+public class Livro {
+private final String nome;
+private final double preco;
+public Livro(String nome, double preco) {
+this.nome = nome;
+this.preco = preco;
+}
+//métodos
+}
+Livro livro = new Livro("Java", 27.83);
+Conexao conexao = pegaConexaoComOBancoDeDados();
+conexao.cadastraLivro(livro);
+conexao.fechaConexao();
+Livro livro = new Livro("Java", 27.83);
+Conexao conexao = pegaConexaoComOBancoDeDados();
+if(!conexao.existeLivro(livro)){
+conexao.cadastraLivro(livro);
+} else {
+conexao.atualizaLivro(livro);
+}
+conexao.fechaConexao();
+//quanto mais procedimentos forem necessários para salvar o livro, maior será a rotina
+para salvar livros. 
+//Logo, mudanças nessas rotinas podem gerar retrabalho. Uma solução
+está em concentrar todos os procedimentos de mudança em um único método.
+
+Livro livro = new Livro("Java", 27.83);
+salvaLivro(livro);
+public void salvaLivro(Livro livro){
+Conexao conexao = pegaConexaoComOBancoDeDados();
+if(!conexao.existeLivro(livro)){
+conexao.cadastraLivro(livro);
+} else{
+conexao.atualizaLivro(livro);
+}
+conexao.fechaConexao();
+}
+//continuo usando o salvaLivro() do mesmo jeito salvaLivro(livro);
+public void salvaLivro(Livro livro){
+//rotina para salvar livro
+conexao.fazBackupDoLivro();
+conexao.fechaConexao();
+}
+
