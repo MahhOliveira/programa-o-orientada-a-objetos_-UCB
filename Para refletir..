@@ -1,0 +1,20 @@
+Que problema pode ser observado na classe abaixo?
+
+class Pedido {
+public String comprador;
+public double valorTotal;
+// outros atributos
+}
+class Pedido {
+private String comprador;
+private double valorTotal;
+// outros atributos
+public String getComprador() { return comprador; }
+public void setComprador(String comprador) { this.comprador = comprador; }
+public double getValorTotal() { return valorTotal;}
+public void setValorTotal(double valorTotal) { this.valorTotal = ValorTotal; }
+// outros getters e setters
+}
+Pedido p = new Pedido();
+// muda valor do pedido para 200 reais!
+p.setValorTotal(p.getValorTotal() + 200.0);
