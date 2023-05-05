@@ -1,0 +1,50 @@
+public class Funcionario {
+double Salario;
+String Nome;
+}
+class Teste {
+public static void main (String[] args) {
+Funcionario F = new Funcionario();
+F.Nome = "Newton Cardoso";
+F.Salario = 23500;
+System.out.println(F.Nome);
+System.out.println(F.Salario);
+}
+}
+public class Funcionario {
+private double Salario;
+private String Nome;
+}
+public class Funcionario {
+private double Salario;
+private String Nome;
+public double getSalario() {
+return this.Salario;
+}
+public String getNome() {
+return this.Nome;
+}
+public void setSalario(double Salario) {
+this.Salario = Salario;
+}
+public void setNome(double Nome) {
+this.Nome = Nome;
+}
+}
+public class Funcionario {
+private double Salario;
+private String Nome;
+public double getSalario() { (...) }
+public String getNome() { (...) }
+public void setSalario(double Salario) { (...)}
+public void setNome(double Nome) { (...)}
+}
+class Teste {
+public static void main (String[] args) {
+Funcionario F = new Funcionario();
+F.setNome("Newton Cardoso");
+F.setSalario = 23500;
+System.out.println(F.getNome());
+System.out.println(F.getSalario());
+}
+}
