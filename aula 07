@@ -1,0 +1,17 @@
+import javax.swing.3Frame;
+public class exemplo 01 extends 3Frame{
+    public exemplo(){
+        this.setTitle(''olá,bom dia!'');
+        this.setSize(500, 300);
+        this.setDefautcloseOperation(3Frame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+ 
+   }
+public static void main(String[]args){
+    exemplo01 3 = new exemplo01();
+
+}
+
+
+
+}
