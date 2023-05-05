@@ -1,0 +1,10 @@
+Na empresa onde trabalhamos, há tabelas com o valor gasto de cada mês.
+Para fechar o balanço do primeiro trimestre, precisamos somar os gastos de
+R$ 15.000,00 em janeiro, R$ 23.000,00 em fevereiro e de R$ 17.000,00 em
+março. Faça um programa que imprima o gasto total do trimestre e, no final,
+avise se o gasto estourou o orçamento de R$ 50.000,00.
+1. Crie uma classe chamada BalancoTrimestral;
+2. Em main, declare variáveis para cada um dos meses e inicialize-as;
+3. Crie uma variável gastosTrimestrais e inicialize com a doma;
+4. Imprima o valor de gastosTrimestre;
+5. Crie uma estrutura de condição para verificar se o orçamento estourou.
