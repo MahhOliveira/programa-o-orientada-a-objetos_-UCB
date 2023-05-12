@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+<p>
+<script> ... </script>
+</p>
+</body>
+</html>
+<p> Digite dois números: </p>
+<input type="text" id="v1"><br>
+<input type="text" id="v2">
+<button type="button" onclick="Soma()">Soma</button>
+<p id="res">Resposta: </p>
+(input)
+(input)
+(button)
+<p>
+<script>
+function Soma() {
+var e1 = parseInt(document.getElementById("v1").value);
+var e2 = parseInt(document.getElementById("v2").value);
+document.getElementById("res").innerHTML = "Resposta: " + (e1 + e2);
+}
+</script>
+</p>
+<p> Digite dois números: </p>
+<input type="text" id="v1"><br>
+<input type="text" id="v2">
+<button type="button" onclick="Soma()">Soma</button>
+<p id="res">Resposta: </p>
+<p>
+<script>
+function Soma() {
+var e1 = parseInt(document.getElementById("v1").value);
+var e2 = parseInt(document.getElementById("v2").value);
+document.getElementById("res").innerHTML = "Resposta: " + (e1 + e2);
+document.getElementById('story').innerHTML = e1 * e2;
+}
+</script>
+</p>
+<input type="text" id="v1"><br>
+<input type="text" id="v2"><br>
+<textarea id="story" name="story" rows="5" cols="33"></textarea><br>
+<p id="res">Resposta: </p>
+<button type="button" onclick="Soma()">Calcular</button>
+<script>
+class Produto {
+constructor(paramNome, paramPreco){
+this.nome = paramNome;
+this.preco = paramPreco;
+}
+calculaDesconto() {
+return this.preco * 0.1;
+}
+}
+var produto1 = new Produto("Blusa", 120);
+var produto2 = new Produto("Calça", 300);
+produto1.calculaDesconto(); //12
+produto2.calculaDesconto(); //30
+</script>
+<script>
+function greeting(name) {
+alert('Olá ' + name);
+}
+function processUserInput(callback) {
+var name = prompt('Por favor insira seu nome.');
+callback(name);
+}
+processUserInput(greeting);
+</script>
+//callback é um tipo de função que só é executada após o processamento
+de outra função.
+<script>
+function greeting(name) {
+alert('Olá ' + name);
+}
+function processUserInput(callback) {
+var name = prompt('Por favor insira seu nome.');
+callback(name);
+}
+processUserInput(greeting);
+</script>
+//Factory é uma função que retorna um objeto
+<script>
+function Pessoa(){
+return{
+nome:"Karolayme",
+sobrenome:"Silva"
+}
+}
+var x = Pessoa();
+document.write (x.nome);
+document.write (x.sobrenome);
+</script>
+Factory
