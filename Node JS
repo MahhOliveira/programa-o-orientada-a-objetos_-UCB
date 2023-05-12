@@ -1,0 +1,25 @@
+!DOCTYPE HTML>
+<html>
+<head></head>
+<body>
+<p>
+<script>
+var tensquared = (function(x) {return x*x;}(10));
+document.write(tensquared);
+</script>
+</p>
+</body>
+</html>
+//Escreva o seguinte código no arquivo app.js:
+const fs = require('fs');
+const path = require('path');
+const logFile = path.join(__dirname, 'log.txt');
+const message = 'Hello, world!';
+fs.appendFile(logFile, `${message}\n`, (err) => {
+if (err) throw err;
+console.log(`Message "${message}" has been logged to ${logFile}`);
+});
+//Este código cria um arquivo de log chamado log.txt no diretório atual e grava a mensagem "Hello,
+world!" nele, seguida por uma nova linha. Ele também imprime uma mensagem no console para
+informar que a mensagem foi registrada com sucesso.
+
