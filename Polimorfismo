@@ -1,0 +1,129 @@
+package poo.polimorfismo;
+public class Square {
+public static int Square(int a) {
+System.out.println("Square of int: " + a);
+return a * a;
+}
+public static double Square(double a) {
+System.out.println("Square of double: " + a);
+return a * a;
+}
+public static void main(String args[]) {
+Square(1);
+Square(1.0);
+}
+}
+E se trocarmos o
+double por int?
+package poo.polimorfismo;
+public class Coercao {
+public static void f(double x) {
+System.out.println(x);
+}
+public static void main(String args[]) {
+f(3.1416);
+f((byte)1);
+f((short)2);
+f('a');
+f(3);
+f(4L);
+f(5.6F);
+}
+}
+A seguir, que métodos são evocados abaixo?
+package poo.polimorfismo;
+public class Square {
+public static int Square(int a) {
+System.out.println("Square of int: " + a);
+return a * a;
+}
+public static double Square(double a) {
+System.out.println("Square of double: " + a);
+return a * a;
+}
+public static void main(String args[]) {
+Square(1);
+Square(1.0);
+Square(‘a’);
+}
+}
+package poo.polimorfismo;
+public class Conflito {
+public static void sum(int a, int b){
+System.out.println("Sum of int:" + (a + b));
+}
+public static void sum(double a, double b){
+System.out.println("Sum of double:" + (a + b));
+}
+public static void main(String args[]) {
+sum(1, 2);
+sum(1.1, 2.2);
+sum(1, 2.2);
+sum((int)1.1, (int)2.2);
+}
+}
+E Agora?
+package poo.polimorfismo;
+public class Conflito {
+public static void sum(int a, int b){
+System.out.println("Sum of int:" + (a + b));
+}
+public static void sum(double a, double b){
+System.out.println("Sum of double:" + (a + b));
+}
+public static void main(String args[]) {
+sum(1, 2);
+sum(1.1, 2.2);
+sum(1, 2.2);
+sum((int)1.1, (int)2.2);
+}
+}
+package poo.polimorfismo;
+class Animal {
+public void fazerBarulho () {
+System.out.println("O animal faz um barulho.");
+}
+}
+class Cachorro extends Animal {
+@Override
+public void fazerBarulho(){
+System.out.println("O cachorro late.");
+}
+}
+class Gato extends Animal {
+@Override
+public void fazerBarulho(){
+System.out.println("O gato mia.");
+}
+}
+public class Subtipagem {
+public static void main(String args[]) {
+Animal A = new Cachorro();
+Animal B = new Gato();
+Animal C = new Animal();
+A.fazerBarulho();
+B.fazerBarulho();
+C.fazerBarulho();
+}
+}
+class Figura {// atributos e métodos comuns a todas as figuras}
+class Circulo extends Figura {// atributos e métodos específicos de círculo}
+class Retangulo extends Figura {// atributos e métodos específicos de retângulo}
+class CalculadoraDeArea {
+public double calcularArea(Figura figura) {
+if (figura instanceof Circulo) {
+Circulo circulo = (Circulo) figura;
+return Math.PI * Math.pow(circulo.getRaio(), 2);
+} else if (figura instanceof Retangulo) {
+Retangulo retangulo = (Retangulo) figura;
+return retangulo.getLargura() * retangulo.getAltura();
+} else {
+throw new IllegalArgumentException("Figura inválida");
+}
+}
+}
+public class NomeDaClasse<T> {
+// variáveis e métodos da classe
+}
+NomeDaClasse<Integer> objeto1 = new NomeDaClasse<Integer>();
+NomeDaClasse<String> objeto2 = new NomeDaClasse<String>();
